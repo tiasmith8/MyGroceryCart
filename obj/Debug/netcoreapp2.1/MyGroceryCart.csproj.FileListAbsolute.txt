@@ -1,0 +1,11 @@
+C:\Users\Tia Smith\source\repos\MyGroceryCart\bin\Debug\netcoreapp2.1\MyGroceryCart.deps.json
+C:\Users\Tia Smith\source\repos\MyGroceryCart\bin\Debug\netcoreapp2.1\MyGroceryCart.runtimeconfig.json
+C:\Users\Tia Smith\source\repos\MyGroceryCart\bin\Debug\netcoreapp2.1\MyGroceryCart.runtimeconfig.dev.json
+C:\Users\Tia Smith\source\repos\MyGroceryCart\bin\Debug\netcoreapp2.1\MyGroceryCart.dll
+C:\Users\Tia Smith\source\repos\MyGroceryCart\bin\Debug\netcoreapp2.1\MyGroceryCart.pdb
+C:\Users\Tia Smith\source\repos\MyGroceryCart\obj\Debug\netcoreapp2.1\MyGroceryCart.csprojAssemblyReference.cache
+C:\Users\Tia Smith\source\repos\MyGroceryCart\obj\Debug\netcoreapp2.1\MyGroceryCart.csproj.CoreCompileInputs.cache
+C:\Users\Tia Smith\source\repos\MyGroceryCart\obj\Debug\netcoreapp2.1\MyGroceryCart.AssemblyInfoInputs.cache
+C:\Users\Tia Smith\source\repos\MyGroceryCart\obj\Debug\netcoreapp2.1\MyGroceryCart.AssemblyInfo.cs
+C:\Users\Tia Smith\source\repos\MyGroceryCart\obj\Debug\netcoreapp2.1\MyGroceryCart.dll
+C:\Users\Tia Smith\source\repos\MyGroceryCart\obj\Debug\netcoreapp2.1\MyGroceryCart.pdb
