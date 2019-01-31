@@ -5,7 +5,7 @@ using System.Text;
 namespace MyGroceryCart.Classes
 {
     /// <summary>
-    /// Represents an item at the grocery store
+    /// Represents an item at the grocery store.
     /// </summary>
     public class GroceryItem
     {
@@ -25,7 +25,7 @@ namespace MyGroceryCart.Classes
         public int Quantity { get; private set; }
 
         /// <summary>
-        /// Initialize an item with name, price and quantity
+        /// Initialize a grocery item with name, price and quantity
         /// </summary>
         /// <param name="name"></param>
         /// <param name="price"></param>
@@ -60,14 +60,12 @@ namespace MyGroceryCart.Classes
             //Update price to be original * coupon value / 100
             if (couponPercentage > 0) //Make sure value is above 0
             {
-                this.Price = this.Price * (couponPercentage / 100M);
+                this.Price = this.Price - this.Price * (couponPercentage / 100M);
                 return true;
             }
 
             //Coupon percentage is invalid
             return false;
         }
-
-
     }
 }

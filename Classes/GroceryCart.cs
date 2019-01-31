@@ -4,22 +4,52 @@ using System.Text;
 
 namespace MyGroceryCart.Classes
 {
+    /// <summary>
+    /// Represents a grocery cart.
+    /// </summary>
     public class GroceryCart
     {
+        private decimal totalPrice;
         /// <summary>
         /// Total of all items in the cart.
         /// </summary>
-        public decimal TotalPrice { get; private set; }
+        //Returns total price for items in cart.
+        //Derived property calculated with Price Property in GroceryItem
+        public decimal TotalPrice
+        {
+            get
+            {
+                decimal total = 0.0M;
+                foreach(GroceryItem item in GroceryItems)
+                {
+                    total += ((item.Price)*item.Quantity);
+                }
+                return total;
+            }
+            set { totalPrice = value; }
+        }
 
         /// <summary>
         /// Number of items in the cart.
         /// </summary>
-        public int TotalNumberOfItems { get; private set; }
+        //// Derived property based on quantity in cart
+        //public int TotalNumberOfItems { get; private set; }
+        public int TotalNumberOfItems
+        {
+            get
+            {
+                int totalItems = 0;
+                foreach(GroceryItem item in GroceryItems)
+                {
+                    totalItems += item.Quantity;
+                }
+                return totalItems;
+            }
+        }
 
         /// <summary>
         /// List containing all added grocery items.
         /// </summary>
-        private List<GroceryItem> groceryItems = new List<GroceryItem>();
         public List<GroceryItem> GroceryItems { get; private set; }
 
         /// <summary>
@@ -27,9 +57,7 @@ namespace MyGroceryCart.Classes
         /// </summary>
         public GroceryCart()
         {
-            this.TotalPrice = 0;
-            this.TotalNumberOfItems = 0;
-            this.GroceryItems = groceryItems;
+            this.GroceryItems = new List<GroceryItem>();
         }
 
         /// <summary>
@@ -39,8 +67,6 @@ namespace MyGroceryCart.Classes
         public void AddItemToCart(GroceryItem item)
         {
             this.GroceryItems.Add(item);
-            this.TotalPrice += (item.Price * item.Quantity);
-            this.TotalNumberOfItems += item.Quantity;
         }
 
         /// <summary>
@@ -52,17 +78,36 @@ namespace MyGroceryCart.Classes
         {
             if (GroceryItems.Contains(item))
             {
-                this.TotalNumberOfItems -= item.Quantity;
-                this.TotalPrice -= (item.Price * item.Quantity);
                 return GroceryItems.Remove(item);
             }
 
             return false;
         }
-
-        public decimal GetTotal()
+        /// <summary>
+        /// Add a discount to cart.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public bool AddDiscount(int discountPercentage)
         {
-            return this.TotalPrice;
+            //Update price to be original * coupon value / 100
+            if (discountPercentage > 0) //Make sure value is above 0
+            {
+                //Add the discount to all cart items
+                foreach(GroceryItem item in GroceryItems)
+                {
+                    item.AddCoupon(discountPercentage);
+                }
+
+                return true;
+            }
+
+            //Coupon percentage is invalid
+            return false;
         }
+
+
+
     }
 }
